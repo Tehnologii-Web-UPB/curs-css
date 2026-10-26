@@ -1,0 +1,180 @@
+/* Exercițiu: variabile CSS (custom properties) — soluție
+   Pagina arată la fel ca la start, dar fiecare valoare repetată
+   are acum un singur loc unde se schimbă. */
+
+/*─────────────────────────────────────────────
+  1) DECLARARE ÎN :root
+  - :root = elementul <html>, dar cu specificitate de clasă.
+  - Numele descriu ROLUL valorii, nu valoarea: --color-primary, nu --blue.
+    Așa tema întunecată poate schimba valoarea fără ca numele să mintă.
+──────────────────────────────────────────────*/
+:root {
+  /* culori */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-on-primary: #ffffff; /* text pe fundal primary */
+  --color-text: #1f2933;
+  --color-text-muted: #52606d;
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-border: #d9e2ec;
+  --color-warning: #d97706;
+
+  /* spațiere */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1rem;
+  --space-lg: 1rem;
+
+  /* colțuri */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* layout */
+  --content-width: 960px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.site-header,
+.site-footer {
+  padding: var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.site-header h1 {
+  margin: 0 0 var(--space-xs);
+}
+
+.site-header p,
+.site-footer p {
+  margin: 0;
+}
+
+.site-main {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.cards h2 {
+  margin-top: 0;
+}
+
+/*─────────────────────────────────────────────
+  4) MOȘTENIRE
+  - Variabilele se moștenesc ca orice proprietate moștenită (ca color).
+  - .card își definește variabilele locale, cu valori implicite din temă;
+    .card--featured le redefinește doar pe ele.
+──────────────────────────────────────────────*/
+.card {
+  --card-border: var(--color-border);
+  --card-border-width: 1px;
+
+  background-color: var(--color-surface);
+  border: var(--card-border-width) solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.card h3 {
+  margin: 0 0 var(--space-xs);
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-md);
+}
+
+.card--featured {
+  --card-border: var(--color-primary);
+  --card-border-width: 2px;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--color-primary-hover);
+}
+
+/*─────────────────────────────────────────────
+  2) + 3) var() CU FALLBACK ȘI SCOPING
+  - --callout-accent NU e declarat nicăieri pentru .callout simplu,
+    deci se folosește fallback-ul: var(--color-primary).
+  - .callout--warning îl declară → doar el și copiii lui văd noua valoare.
+──────────────────────────────────────────────*/
+.callout {
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--callout-accent, var(--color-primary));
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.callout h2 {
+  margin: 0 0 var(--space-xs);
+  color: var(--callout-accent, var(--color-primary));
+}
+
+.callout p {
+  margin: 0;
+}
+
+.callout--warning {
+  --callout-accent: var(--color-warning);
+}
+
+/*─────────────────────────────────────────────
+  5) MEDIA QUERY
+  - Schimbăm doar valorile; toate componentele se adaptează singure.
+  - Atenție: condiția (min-width: 700px) NU poate folosi var().
+  7) calc(): spațierea mare derivă din cea medie.
+──────────────────────────────────────────────*/
+@media (min-width: 700px) {
+  :root {
+    --space-md: 1.5rem;
+    --space-lg: calc(var(--space-md) * 1.5);
+  }
+}
+
+/*─────────────────────────────────────────────
+  6) TEMĂ ÎNTUNECATĂ
+  - Doar culorile se schimbă; nicio regulă de componentă nu e atinsă.
+  - Testează: DevTools → Rendering → Emulate CSS prefers-color-scheme: dark.
+──────────────────────────────────────────────*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #60a5fa;
+    --color-primary-hover: #93c5fd;
+    --color-on-primary: #0b1220;
+    --color-text: #e4e7eb;
+    --color-text-muted: #9aa5b1;
+    --color-background: #0b1220;
+    --color-surface: #18212f;
+    --color-border: #323f4b;
+    --color-warning: #fbbf24;
+  }
+}
