@@ -1,0 +1,116 @@
+/* Exercițiu: variabile CSS (custom properties)
+   Pagina arată deja bine, dar valorile sunt copiate peste tot.
+   Urmează pașii din README.md și înlocuiește-le cu variabile.
+   Nu modifica HTML-ul. */
+
+/* TODO 1 – declară variabilele în :root
+   (culori: primary, primary-hover, text, text-muted, background, surface, border;
+   spațiere: space-xs … space-lg; radius: radius-sm, radius-md) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background-color: #f5f7fa;
+}
+
+.site-header,
+.site-footer {
+  padding: 1rem;
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+}
+
+.site-header p,
+.site-footer p {
+  margin: 0;
+}
+
+.site-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.cards h2 {
+  margin-top: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  color: #2563eb;
+}
+
+.card p {
+  color: #52606d;
+  margin: 0 0 1rem;
+}
+
+/* TODO 4 – .card--featured: schimbă doar variabilele, nu proprietățile */
+.card--featured {
+  border-color: #2563eb;
+  border-width: 2px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: #1d4ed8;
+}
+
+.callout {
+  background-color: #ffffff;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.callout h2 {
+  margin: 0 0 0.5rem;
+  color: #2563eb;
+}
+
+.callout p {
+  margin: 0;
+}
+
+/* TODO 3 – .callout--warning: redefinește o singură variabilă de accent */
+.callout--warning {
+  border-left-color: #d97706;
+}
+
+.callout--warning h2 {
+  color: #d97706;
+}
+
+/* TODO 5 – media query: mărește spațierea pe ecrane mari schimbând doar variabilele */
+
+/* TODO 6 – temă întunecată cu prefers-color-scheme: redefinește doar culorile */

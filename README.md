@@ -13,6 +13,7 @@ This repository hosts the starter kits we use during the “Tehnologii Web 2026�
   - `table/` – Exercise focused on styling semantic tables.
 - `layout_flex_0/` – Flexbox drill: container and item properties on five blocks.
 - `layout_grid_0/` … `layout_grid_3/` – Progressive CSS Grid exercises: equal columns, fixed tracks, a 12-column shell, then named lines and template areas.
+- `css-variables/` – Refactor a finished page with custom properties: role-based tokens, scoping, media-query overrides, and a dark theme.
 - `workshop/` – Guided workshop “Hoinărind prin lume”; HTML is complete while the CSS files are blank. Follow the instructions in `workshop/README.md`.
 
 Most exercise folders have a `README.md` with the requirements. All assets are static. Open any `index.html` directly in your browser (double-click or use a live-server plugin) to preview the result.

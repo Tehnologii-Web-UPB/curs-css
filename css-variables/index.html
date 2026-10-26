@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Variables — Custom properties</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Variabile CSS</h1>
+      <p>Aceeași pagină, alte valori: schimbă o variabilă, nu zece reguli.</p>
+    </header>
+
+    <main class="site-main">
+      <section class="cards" aria-labelledby="cards-title">
+        <h2 id="cards-title">Carduri</h2>
+
+        <article class="card">
+          <h3>Custom properties</h3>
+          <p>Se declară cu două liniuțe: <code>--spacing: 1rem</code>.</p>
+          <a href="#" class="btn">Citește</a>
+        </article>
+
+        <article class="card">
+          <h3>var()</h3>
+          <p>Se citesc cu <code>var(--spacing)</code>, opțional cu fallback.</p>
+          <a href="#" class="btn">Citește</a>
+        </article>
+
+        <article class="card card--featured">
+          <h3>Moștenire</h3>
+          <p>O variabilă redefinită pe un element se aplică tuturor copiilor.</p>
+          <a href="#" class="btn">Citește</a>
+        </article>
+      </section>
+
+      <aside class="callout" aria-labelledby="info-title">
+        <h2 id="info-title">Info</h2>
+        <p>Un callout care folosește culorile temei.</p>
+      </aside>
+
+      <aside class="callout callout--warning" aria-labelledby="warn-title">
+        <h2 id="warn-title">Atenție</h2>
+        <p>
+          Același callout, dar cu o singură variabilă suprascrisă: culoarea de
+          accent.
+        </p>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>Tehnologii Web — CSS</p>
+    </footer>
+  </body>
+</html>
