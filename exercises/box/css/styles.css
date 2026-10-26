@@ -1,17 +1,6 @@
-.box {
-  width: 300px;
-  height: 300px;
-  background-color: tomato;
-  border-radius: 10%;
-  box-shadow: 10px 10px lightgrey;
-}
+/* Exercițiu: box model – vezi README.md pentru cerințe. */
 
-p {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: aliceblue;
-  padding: 10px;
-  border: 2px solid cornflowerblue;
-  margin: 100px 30px 50px 80px;
-}
+/* TODO 1 – .box: 300px × 300px, fundal colorat, colțuri rotunjite, umbră */
+
+/* TODO 2 – p: centrat, font sans-serif, culoare deschisă,
+            padding 10px, border 2px și margin diferit pe fiecare latură */

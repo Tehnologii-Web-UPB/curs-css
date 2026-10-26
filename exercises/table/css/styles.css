@@ -1,29 +1,13 @@
-body {
-  margin: 100px;
-}
+/* Exercițiu: stilizarea unui tabel – vezi README.md pentru cerințe. */
 
-table,
-td {
-  border: 1px solid dodgerblue;
-  border-left: 0;
-  border-right: 0;
-  border-collapse: collapse;
-}
+/* TODO 1 – spațiu în jurul tabelului */
 
-td,
-th {
-  padding: 10px;
-}
+/* TODO 2 – border doar sus/jos pe tabel și celule + border-collapse */
 
-th {
-  background-color: #427fef;
-  color: white;
-}
+/* TODO 3 – padding pe td și th */
 
-tr:nth-child(odd) {
-  background-color: #eef7ff;
-}
+/* TODO 4 – antetul (th) cu fundal colorat și text alb */
 
-tfoot {
-  text-align: left;
-}
+/* TODO 5 – rânduri alternante (zebra) cu :nth-child */
+
+/* TODO 6 – textul din tfoot aliniat la stânga */

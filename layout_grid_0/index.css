@@ -21,21 +21,9 @@ body {
   align-items: center; */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* TODO 1 – activează display: grid pe .container (vezi comentariul de mai sus)
+            și împarte-l în trei coloane egale: grid-template-columns.
+   TODO 2 – centrează numerele din fiecare .item cu flexbox. */
 
 .item-1, .item-3, .item-5 {
   background-color: #85C4B4;

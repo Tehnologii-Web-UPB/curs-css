@@ -5,29 +5,17 @@ body {
   box-sizing: border-box;
   background-color: #FFEBB1;
   padding: 20px;
-  
-  
+  height: 100vh;
   display: grid;
   gap: 5px;
-  grid-template-columns: repeat(6, 150px);
-  grid-template-rows: repeat(2, 150px);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* TODO 1 – coloane cu linii denumite:
+            [main-start] 1fr [content-start] repeat(4, 1fr) [content-end] 1fr [main-end]
+            și rânduri 150px 1fr 100px.
+   TODO 2 – definește grid-template-areas (H, M, C, F) și atribuie-le cu grid-area.
+   TODO 3 – plasează .footer folosind liniile denumite:
+            grid-column: content-start / content-end. */
 
 .item {
   font-size: 40px;
@@ -40,18 +28,18 @@ body {
   align-items: center;
 }
 
-.item-1, .item-5, .item-7 {
-  background-color: #75a4B4;
+.header {
+  background-color: #75a4b4;
 }
 
-.item-3, .item-9, .item-11 {
-  background-color: #85C4B4;
+.menu {
+  background-color: #ff7363;
 }
 
-.item-4, .item-8, .item-12 {
-  background-color: #F0B54E;
+.content {
+  background-color: #85c4b4;
 }
 
-.item-2, .item-6, .item-10 {
-  background-color: #FF7363;
+.footer {
+  background-color: #f0b54e;
 }

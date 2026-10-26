@@ -6,43 +6,15 @@ body {
   background-color: #FFEBB1;
   padding: 20px;
   height: 100vh;
-  
-  
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px auto 100px;
   gap: 5px;
 }
 
-
-.header {
-  grid-column: 1 / -1;
-}
-
-.menu {}
-
-.content {
-  grid-column: 2 / -1;
-}
-
-.footer {
-  grid-column: 1 / -1;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* TODO 1 – pe .container: grid-template-columns: repeat(12, 1fr),
+            rânduri 100px 1fr 100px.
+   TODO 2 – .header 1 / -1, .menu 1 / span 3, .content 4 / -1, .footer 1 / -1.
+   TODO 3 – în .header aliniază linkurile cu flexbox și împinge .logout
+            la dreapta cu margin-left: auto. */
 
 .item {
   font-size: 40px;

@@ -21,26 +21,13 @@ body {
   color: #FFEBB1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* TODO 1 – întinde html, body și .container pe toată fereastra (height: 100%).
+   TODO 2 – pe .container încearcă justify-content, align-items, flex-wrap,
+            align-content și observă ce se întâmplă pe fiecare axă.
+   TODO 3 – .item-3: flex: 1 5 300px
+   TODO 4 – .item-4: flex-shrink: 5
+   TODO 5 – .item-5: margin-left: auto + align-self
+   TODO 6 – folosește order pe unul dintre elemente. */
 
 .item-1, .item-3 {
   background-color: #85C4B4;
@@ -53,5 +40,3 @@ body {
 .item-2, .item-5 {
   background-color: #FF7363;
 }
-
-

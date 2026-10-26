@@ -5,37 +5,12 @@ body {
   box-sizing: border-box;
   background-color: #FFEBB1;
   padding: 20px;
-  
-  
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 100px 100px;
-  gap: 5px;
 }
 
-
-.header {}
-
-.menu {}
-
-.content {}
-
-.footer {}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* TODO 1 – pe .container: display: grid, coloane 10% 2fr 1fr, rânduri 150px 1fr,
+            un gap și height: 100vh.
+   TODO 2 – .header ocupă toată lățimea (grid-column).
+   TODO 3 – .menu în coloana 1, .content în coloana 2, .footer în coloana 3. */
 
 .item {
   font-size: 40px;
