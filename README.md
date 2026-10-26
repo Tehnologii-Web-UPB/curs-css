@@ -1,8 +1,8 @@
 # CSS Course — Lab Materials
 
-This repository hosts the starter kits we use during the “Tehnologii Web 2025” course. It contains the files we reference live, together with hands-on exercises that you can continue on your own afterwards.
+This repository hosts the starter kits we use during the “Tehnologii Web 2026” course. It contains the files we reference live, together with hands-on exercises that you can continue on your own afterwards.
 
-> The complete solutions live in the pull request on the `solutii` branch: <https://github.com/Tehnologii-Web-2025/curs-css/pull/1>. Try the exercises first, then use the branch for comparison.
+> The complete solutions live on the `solutii` branch: <https://github.com/Tehnologii-Web-UPB/curs-css/tree/solutii> (compare with the starters: <https://github.com/Tehnologii-Web-UPB/curs-css/compare/main...solutii>). Try the exercises first, then use the branch for comparison.
 
 ## Repository layout
 
@@ -11,9 +11,11 @@ This repository hosts the starter kits we use during the “Tehnologii Web 2025�
 - `exercises/`
   - `box/` – Practice manipulating the CSS box model.
   - `table/` – Exercise focused on styling semantic tables.
+- `layout_flex_0/` – Flexbox drill: container and item properties on five blocks.
+- `layout_grid_0/` … `layout_grid_3/` – Progressive CSS Grid exercises: equal columns, fixed tracks, a 12-column shell, then named lines and template areas.
 - `workshop/` – Guided workshop “Hoinărind prin lume”; HTML is complete while the CSS files are blank. Follow the instructions in `workshop/README.md`.
 
-All assets are static. Open any `index.html` directly in your browser (double-click or use a live-server plugin) to preview the result.
+Most exercise folders have a `README.md` with the requirements. All assets are static. Open any `index.html` directly in your browser (double-click or use a live-server plugin) to preview the result.
 
 ### Checking out the solutions locally
 

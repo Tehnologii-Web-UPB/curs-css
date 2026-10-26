@@ -30,10 +30,11 @@
   margin-bottom: 1rem; /* spațiu între câmpuri succesive */
 }
 
-/* SELECTOR DE TIP (label)
-   Stilizează etichetele câmpurilor formularului.
-   Scop: claritate vizuală și aliniere frumoasă. */
-label {
+/* SELECTOR DESCENDENT (.form-field label)
+   Stilizează doar etichetele din formular.
+   Atenție: un simplu `label {}` ar afecta și butonul „Meniu” din header,
+   care este tot un <label>. */
+.form-field label {
   display: block; /* fiecare label pe linie separată, deasupra inputului */
   font-weight: bold; /* text accentuat pentru claritate */
   margin-bottom: 0.25rem; /* mic spațiu între label și input */
@@ -51,11 +52,11 @@ textarea {
   font: inherit; /* preia fontul de la body (consistență) */
 }
 
-/* PSEUDO-CLASĂ :focus
-   Se aplică atunci când utilizatorul selectează câmpul (click / tab).
+/* PSEUDO-CLASĂ :focus-visible
+   Se aplică atunci când browserul arată focusul (la câmpuri text: și la click).
    Scop: feedback vizual clar – știm unde scriem. */
-input:focus,
-textarea:focus {
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid #0059b3; /* chenar albastru intens la focus */
 }
 
@@ -78,7 +79,8 @@ textarea:focus {
 
 /* .btn:hover → PSEUDO-CLASĂ
    Schimbă culoarea butonului la trecerea mouse-ului. */
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
   background-color: #004999; /* albastru mai închis → efect de apăsare */
 }
 /* Bună practică:

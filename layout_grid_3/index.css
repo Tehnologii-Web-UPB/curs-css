@@ -28,9 +28,10 @@ body {
   grid-template-areas:
     "H H H H H H"
     "M C C C C C"
-    "F F F F F F";
-  /* Named lines make it obvious where the content band starts,
-     while template areas keep the child placement declarative */
+    ". . . . . .";
+  /* Template areas keep header/menu/content placement declarative,
+     while the named lines place the footer inside the content band.
+     Bonus: every area also creates implicit lines, e.g. C-start / C-end. */
 }
 
 .item {
@@ -62,5 +63,8 @@ body {
 
 .footer {
   background-color: #f0b54e;
-  grid-area: F;
+  /* Placed with the named lines instead of an area: the footer spans
+     only the content band (columns 2–5) without counting tracks. */
+  grid-row: 3;
+  grid-column: content-start / content-end;
 }

@@ -1,0 +1,89 @@
+/* Workshop: Margin & Padding — soluție */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+}
+
+section {
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 1rem;
+}
+
+.note {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* 1) O singură cutie
+   Lățimea vizibilă = width + padding stânga/dreapta + border (content-box).
+   padding mărește cutia ÎN INTERIOR, margin o depărtează de vecini. */
+.box {
+  width: 300px;
+  background-color: #eaf3ff;
+  border: 2px solid #0059b3;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* 2) Cutie în cutie
+   padding-ul lui .outer îndepărtează conținutul de propriul border;
+   margin-ul lui .inner o îndepărtează de textul „Outer”. */
+.outer {
+  border: 2px solid #0059b3;
+  padding: 24px;
+  background-color: #f7fbff;
+}
+
+.inner {
+  border: 2px dashed #d97706;
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #fff8e1;
+}
+
+/* 3) Margin collapsing
+   Marginile verticale ale blocurilor vecine nu se adună:
+   rămâne cea mai mare dintre ele → 60px, nu 100px. */
+.m1,
+.m2 {
+  background-color: #eaf3ff;
+  padding: 8px;
+}
+
+.m1 {
+  margin-bottom: 40px;
+}
+
+.m2 {
+  margin-top: 60px;
+}
+
+/* 4) Centrare orizontală
+   margin: 0 auto împarte spațiul liber egal între stânga și dreapta,
+   dar numai dacă elementul are o lățime mai mică decât containerul. */
+.centered {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 12px;
+  text-align: center;
+  background-color: #eaf3ff;
+  border: 2px solid #0059b3;
+}
+
+/* 5) Mini-carduri fără flex
+   inline-block le pune pe același rând; box-sizing: border-box face ca
+   padding-ul și border-ul să fie incluse în width, deci calculul e simplu. */
+.card {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 150px;
+  padding: 16px;
+  margin: 0 12px 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  vertical-align: top;
+}

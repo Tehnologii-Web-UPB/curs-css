@@ -10,14 +10,14 @@
   </head>
 
   <body>
-    <header class="site-header">
-      <a href="index.html" class="logo" aria-label="Acasă">
-        <span class="logo-text">Hoinarind prin lume</span>
-      </a>
+    <header id="top" class="site-header">
+      <a href="index.html" class="logo"
+        ><span class="logo-text">Hoinarind prin lume</span></a
+      >
       <h1 class="site-title">Explorăm destinații faine</h1>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
-      <label for="nav-toggle" class="menu-toggle" aria-label="Deschide meniul"
-        >☰ Meniu</label
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="menu-toggle"
+        ><span aria-hidden="true">☰</span> Meniu</label
       >
       <nav class="site-nav" aria-label="Navigație principală">
         <a href="index.html" aria-current="page">Acasă</a>
@@ -36,6 +36,8 @@
           <img
             src="assets/img/home/city.jpg"
             alt="Panoramă a orașului la apus"
+            width="612"
+            height="485"
           />
           <figcaption>Idei pentru city break.</figcaption>
         </figure>
@@ -52,7 +54,12 @@
             <a href="#">Vezi mai mult</a>.
           </p>
           <figure class="destination-media">
-            <img src="assets/img/home/lisbon.jpg" alt="Peisaj din Lisabona" />
+            <img
+              src="assets/img/home/lisbon.jpg"
+              alt="Peisaj din Lisabona"
+              width="400"
+              height="325"
+            />
             <figcaption>Cartierul Alfama</figcaption>
           </figure>
         </article>
@@ -65,7 +72,12 @@
             Istorie la fiecare pas, gelato și piațete fotogenice.
           </p>
           <figure class="destination-media">
-            <img src="assets/img/home/rome.jpg" alt="Peisaj din Roma" />
+            <img
+              src="assets/img/home/rome.jpg"
+              alt="Peisaj din Roma"
+              width="600"
+              height="600"
+            />
             <figcaption>Colosseum</figcaption>
           </figure>
         </article>
@@ -85,7 +97,7 @@
     </main>
 
     <footer class="site-footer">
-      <small>&copy; <span data-year>2025</span> Hoinarind prin lume.</small>
+      <small>&copy; <span data-year>2026</span> Hoinarind prin lume.</small>
       <nav class="footer-nav" aria-label="Navigație secundară">
         <a href="about.html">Despre</a>
         <a href="contact.html">Contact</a>

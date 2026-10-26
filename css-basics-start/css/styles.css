@@ -22,6 +22,7 @@ p {
 /*─────────────────────────────────────────────
   SELECTORI DE CLASĂ
   - Încep cu punct (.)
+  - În HTML: două paragrafe din listă au class="note" și class="note important".
   - Se folosesc pentru a stiliza mai multe elemente care au același „rol vizual”.
   - Un element poate avea mai multe clase (ex: class="note important").
 ──────────────────────────────────────────────*/
@@ -50,8 +51,8 @@ p {
 }
 
 /*─────────────────────────────────────────────
-  SELECTORI DE TIP COMBINAT (sau „selector de grup”)
-  - Aici avem două elemente HTML scrise separate prin virgulă.
+  LISTĂ DE SELECTORI (sau „selector de grup”)
+  - Aici avem doi selectori separați prin virgulă.
   - Înseamnă: aplică aceleași stiluri atât lui <header>, cât și lui <footer>.
 ──────────────────────────────────────────────*/
 header,
@@ -71,8 +72,8 @@ main {
 }
 
 /*─────────────────────────────────────────────
-  SELECTOR DE DESCENDENT (ul.quip-list)
-  - Înseamnă: selectează doar <ul> care au clasa "quip-list".
+  SELECTOR COMPUS (ul.quip-list)
+  - Tip + clasă lipite, fără spațiu: același element trebuie să fie <ul> ȘI să aibă clasa "quip-list".
   - Dacă aș scrie doar .quip-list, s-ar aplica oricărui element cu acea clasă.
 ──────────────────────────────────────────────*/
 ul.quip-list {
@@ -106,3 +107,31 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/*─────────────────────────────────────────────
+  MOȘTENIRE (inheritance)
+  - Unele proprietăți (color, font-family, line-height) trec de la părinte la copii.
+  - <li>-urile nu au color setat, dar textul lor e #222 – moștenit de la body.
+  - <p> are însă propria regulă (font-family: monospace), care câștigă în fața
+    valorii moștenite: o valoare moștenită pierde ÎNTOTDEAUNA în fața unei reguli
+    care țintește direct elementul.
+  - Proprietăți ca padding, margin, border NU se moștenesc.
+──────────────────────────────────────────────*/
+
+/*─────────────────────────────────────────────
+  SPECIFICITATE
+  Paragraful <p class="note important"> este țintit de trei reguli de mai sus:
+    p          → specificitate (0,0,1) → color: darkblue
+    .note      → specificitate (0,1,0) → color: seagreen
+    .important → specificitate (0,1,0) → color: crimson
+  - Clasa bate tipul, deci darkblue pierde.
+  - .note și .important au aceeași specificitate → câștigă regula scrisă ULTIMA
+    (crimson). Mută .important deasupra lui .note și observă diferența.
+  - Regula de mai jos are un ID (1,1,1) și bate orice combinație de clase,
+    oriunde ar fi scrisă. Decomentează `color` și textul nu mai e crimson.
+──────────────────────────────────────────────*/
+#exercitiu p.important {
+  background-color: #fff3f3;
+  /* color: purple; */
+}
+/* Vezi https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity */

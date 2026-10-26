@@ -16,7 +16,7 @@
 
 /* SELECTOR DE TIP (html) */
 html {
-  font-size: 16px; /* definește mărimea de bază pentru unitatea rem (1rem = 16px) */
+  font-size: 100%; /* respectă setarea de font a utilizatorului (implicit 16px → 1rem = 16px) */
 }
 
 /* SELECTOR DE TIP (body) */
@@ -37,15 +37,16 @@ a {
 
 /* PSEUDO-CLASE (hover și focus)
    Hover = când treci cu mouse-ul
-   Focus = când linkul e selectat de la tastatură (accesibilitate) */
+   Focus-visible = când linkul e selectat de la tastatură (accesibilitate);
+   spre deosebire de :focus, nu se activează la click cu mouse-ul */
 a:hover,
-a:focus {
+a:focus-visible {
   text-decoration: underline; /* subliniază linkul → indică acțiune */
   color: #004999; /* albastru mai închis la interacțiune */
 }
 /* Bună practică:
    - Linkurile trebuie să aibă un feedback vizual (hover/focus).
-   - Nu elimina complet `:focus` → ajută navigarea cu tastatura. */
+   - Nu elimina complet stilul de focus → ajută navigarea cu tastatura. */
 
 /* =========================
    STRUCTURA PAGINII (HEADER + FOOTER)
@@ -83,9 +84,9 @@ a:focus {
    ========================= */
 
 /* SELECTOR DE CLASĂ (.site-nav)
-   → containerul pentru linkuri */
+   → containerul pentru linkuri; pe mobil e ascuns implicit (vezi mai jos) */
 .site-nav {
-  display: block; /* afișează linkurile unul sub altul (mobil) */
+  display: none; /* ascunde navigația complet până la apăsarea butonului */
   margin-top: 0.5rem; /* distanță față de titlu/logo */
 }
 
@@ -116,6 +117,19 @@ a:focus {
    BUTON MENIU (mobil)
    ========================= */
 
+/* SELECTOR DE CLASĂ (.nav-toggle)
+   → checkbox-ul ascuns VIZUAL, dar nu și pentru tastatură/cititoare de ecran.
+   Atributul `hidden` sau `display: none` l-ar scoate din ordinea Tab
+   și meniul n-ar mai putea fi deschis de la tastatură. */
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* SELECTOR DE CLASĂ (.menu-toggle)
    → label-ul care acționează ca un buton hamburger */
 .menu-toggle {
@@ -126,9 +140,10 @@ a:focus {
   margin-top: 0.5rem;
 }
 
-/* ASCUNDEREA MENIULUI implicit pe mobil */
-.site-nav {
-  display: none; /* ascunde navigația complet */
+/* Când checkbox-ul primește focus de la tastatură, arătăm focusul pe label */
+.nav-toggle:focus-visible + .menu-toggle {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 /* SELECTOR COMPLEX (checkbox hack)
@@ -183,8 +198,9 @@ a:focus {
     padding: 2rem; /* mai mult spațiu pe ecrane mari */
   }
 
-  .menu-toggle {
-    display: none; /* ascunde butonul hamburger pe desktop */
+  .menu-toggle,
+  .nav-toggle {
+    display: none; /* pe desktop nu mai e nevoie de buton (nici de checkbox în ordinea Tab) */
   }
 
   .site-nav {

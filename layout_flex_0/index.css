@@ -32,7 +32,10 @@ body {
   max-width: 960px;
   justify-content: flex-start;
   align-items: flex-start;
-  align-content: flex-start;
+  /* stretch (the default) shares the container height between the lines.
+     With flex-start each line is only as tall as its items, so align-self
+     on .item-2 / .item-5 would have no visible effect. */
+  align-content: stretch;
 }
 
 /* Shared look & feel for the numbered blocks */
